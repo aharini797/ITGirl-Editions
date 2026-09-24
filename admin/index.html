@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>IT Girl Editions - Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+</head>
+
+<body>
+
+    <div class="admin-container">
+
+        <!-- LOGIN -->
+        <section
+            id="loginSection"
+            class="login-section"
+        >
+
+            <div class="login-card">
+
+                <div class="admin-logo">
+                    IT Girl Editions
+                </div>
+
+                <h1>
+                    Admin Login
+                </h1>
+
+                <p>
+                    Manage your accessories store
+                </p>
+
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Admin email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="login-btn"
+                    >
+                        Login
+                    </button>
+
+                </form>
+
+
+                <p
+                    id="loginMessage"
+                    class="message"
+                ></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADMIN DASHBOARD -->
+        <section
+            id="dashboardSection"
+            class="dashboard-section hidden"
+        >
+
+            <header class="admin-header">
+
+                <div>
+
+                    <h1>
+                        IT Girl Editions
+                    </h1>
+
+                    <p>
+                        Admin Dashboard
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="logoutBtn"
+                    class="logout-btn"
+                >
+                    Logout
+                </button>
+
+            </header>
+
+
+            <main class="dashboard">
+
+                <!-- STATS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <span>
+                            Products
+                        </span>
+
+                        <strong
+                            id="productCount"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span>
+                            Categories
+                        </span>
+
+                        <strong
+                            id="categoryCount"
+                        >
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CATEGORY MANAGEMENT -->
+
+                <section class="admin-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Manage Categories
+                            </h2>
+
+                            <p>
+                                Add and manage accessory categories
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="categoryForm"
+                        class="admin-form"
+                    >
+
+                        <input
+                            type="text"
+                            id="categoryName"
+                            placeholder="Category name"
+                            required
+                        >
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                        >
+                            Add Category
+                        </button>
+
+                    </form>
+
+
+                    <div
+                        id="categoryList"
+                        class="category-list"
+                    ></div>
+
+                </section>
+
+
+                <!-- PRODUCT MANAGEMENT -->
+
+                <section class="admin-card">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Manage Products
+                            </h2>
+
+                            <p>
+                                Add and manage accessories
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="productForm"
+                        class="admin-form product-form"
+                    >
+
+                        <input
+                            type="text"
+                            id="productName"
+                            placeholder="Product name"
+                            required
+                        >
+
+
+                        <input
+                            type="number"
+                            id="productPrice"
+                            placeholder="Price"
+                            min="0"
+                            required
+                        >
+
+
+                        <input
+                            type="number"
+                            id="discountPrice"
+                            placeholder="Discount price (optional)"
+                            min="0"
+                        >
+
+
+                        <textarea
+                            id="productDescription"
+                            placeholder="Product description"
+                            rows="4"
+                        ></textarea>
+
+
+                        <select
+                            id="productCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Select Category
+                            </option>
+
+                        </select>
+
+
+                        <input
+                            type="number"
+                            id="productStock"
+                            placeholder="Stock"
+                            min="0"
+                            required
+                        >
+
+
+                        <label class="checkbox-row">
+
+                            <input
+                                type="checkbox"
+                                id="newArrival"
+                            >
+
+                            <span>
+                                New Arrival
+                            </span>
+
+                        </label>
+
+
+                        <label class="checkbox-row">
+
+                            <input
+                                type="checkbox"
+                                id="offer"
+                            >
+
+                            <span>
+                                Offer
+                            </span>
+
+                        </label>
+
+
+                        <label class="image-label">
+                            Product Image
+                        </label>
+
+
+                        <input
+                            type="file"
+                            id="productImage"
+                            accept="image/*"
+                            required
+                        >
+
+
+                        <div
+                            id="uploadStatus"
+                            class="upload-status"
+                        ></div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                        >
+                            Add Product
+                        </button>
+
+                    </form>
+
+
+                    <div
+                        id="productList"
+                        class="product-list"
+                    ></div>
+
+                </section>
+
+            </main>
+
+        </section>
+
+    </div>
+
+
+    <script
+        type="module"
+        src="admin.js"
+    ></script>
+
+</body>
+
+</html>
